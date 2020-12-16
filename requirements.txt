@@ -1,7 +1,11 @@
 click==7.1.2
 decorator==4.4.2
 docx2txt==0.8
+Flask==1.1.2
+itsdangerous==1.1.0
+Jinja2==2.11.2
 joblib==0.17.0
+MarkupSafe==1.1.1
 networkx==2.5
 numpy==1.19.4
 pyobjc==7.0.1
@@ -123,3 +127,4 @@ pyobjc-framework-WebKit==7.0.1
 pyttsx3==2.90
 regex==2020.11.13
 tqdm==4.54.1
+Werkzeug==1.0.1

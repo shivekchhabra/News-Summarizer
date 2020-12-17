@@ -34,8 +34,11 @@ def clean(filedata):
     return sentences
 
 
-@app.route('/summarize',methods=['POST'])
+@app.route('/summarize', methods=['POST'])
 def summarize():
     text = request.args.get('data')
     final = generate_summary(text)
     return final
+
+
+app.run(host='0.0.0.0', port=8501)

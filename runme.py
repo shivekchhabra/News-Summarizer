@@ -73,7 +73,10 @@ def generate_summary(file_name):
     """
     summarize_text = []
     sentences = read_article(file_name)
-    num_sentences = int(len(sentences) / 2)
+    if len(sentences) > 4:
+        num_sentences = int(len(sentences) / 3)
+    else:
+        num_sentences = len(sentences)
     sentence_similarity_martix = build_similarity_matrix(sentences)
     sentence_similarity_graph = nx.from_numpy_array(sentence_similarity_martix)
     scores = nx.pagerank(sentence_similarity_graph)
@@ -108,7 +111,7 @@ def write_output(outfile):
 
 
 if __name__ == '__main__':
-    input_file = 'India news.docx'
+    input_file = 'news.txt'
     write_file = 'output.txt'
 
     op = generate_summary(input_file)

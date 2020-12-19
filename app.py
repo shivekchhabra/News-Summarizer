@@ -38,7 +38,9 @@ def clean(filedata):
 def summarize():
     text = request.form.get('data')
     final = generate_summary(text)
-    return final
+    output = {}
+    output['output'] = final
+    return output
 
 
 app.run(host='0.0.0.0', port=8501)

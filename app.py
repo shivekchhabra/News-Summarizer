@@ -36,7 +36,7 @@ def clean(filedata):
 
 @app.route('/summarize', methods=['POST'])
 def summarize():
-    text = request.args.get('data')
+    text = request.form.get('data')
     final = generate_summary(text)
     return final
 
